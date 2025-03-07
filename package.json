@@ -1,0 +1,38 @@
+{
+  "name": "ts-book-library-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint .",
+    "test": "vitest --run",
+    "db:create:dev": "createdbjs ${DATABASE_DB:-url_shortener_dev} --user=${DATABASE_USER:-postgres} --password=${DATABASE_PASSWORD:-postgres} --host=${DATABASE_HOST:-127.0.0.1}",
+    "db:create:test": "createdbjs ${TEST_DATABASE_DB:-url_shortener_test} --user=${DATABASE_USER:-postgres} --password=${DATABASE_PASSWORD:-postgres} --host=${DATABASE_HOST:-127.0.0.1}",
+    "db:migrate:dev": "npx knex migrate:latest --env development",
+    "db:migrate:test": "npx knex migrate:latest --env test",
+    "db:rollback:dev": "npx knex migrate:rollback --env development",
+    "db:rollback:test": "npx knex migrate:rollback --env test"
+  },
+  "keywords": [],
+  "author": "Fernando Belmonte Archetti",
+  "license": "ISC",
+  "description": "A simple RESTful API for a Book Library built with Fastify, Knex, Objection, and TypeScript.",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "knex": "^3.1.0",
+    "objection": "^3.1.5",
+    "pg": "^8.13.3",
+    "pgtools": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "eslint": "^9.21.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
+  }
+}
