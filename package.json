@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc && node dist/index.js",
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch src/bootstrap/index.ts",
     "lint": "eslint .",
     "test": "vitest --run",
     "db:create:dev": "createdbjs ${DATABASE_DB:-url_shortener_dev} --user=${DATABASE_USER:-postgres} --password=${DATABASE_PASSWORD:-postgres} --host=${DATABASE_HOST:-127.0.0.1}",
